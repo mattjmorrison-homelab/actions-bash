@@ -1,0 +1,10 @@
+name: Install shell CI tools
+description: >-
+  Installs pinned actionlint, shellcheck, and bats onto PATH. Shared by
+  every repo that lints or tests bash scripts, so the tool versions live
+  in one place instead of being copy-pasted into each workflow.
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: bash "${{ github.action_path }}/install.sh"
