@@ -18,7 +18,7 @@ serve() {
 
 case "$args" in
   *actionlint*) serve actionlint.tar.gz ;;
-  *shellcheck*) serve shellcheck.tar.xz ;;
+  *shellcheck*) serve shellcheck.tar.gz ;;
   *bats-core*) serve bats-core.tar.gz ;;
   *)
     echo "unexpected curl call: $args" >&2

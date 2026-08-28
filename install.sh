@@ -11,8 +11,8 @@ mkdir -p "$RUNNER_TEMP/bin"
 curl -sfL "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz" \
   | tar -xz -C "$RUNNER_TEMP/bin" actionlint
 
-curl -sfL "https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.linux.x86_64.tar.xz" \
-  | tar -xJ -C "$RUNNER_TEMP" shellcheck-v0.11.0/shellcheck
+curl -sfL "https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.linux.x86_64.tar.gz" \
+  | tar -xz -C "$RUNNER_TEMP" shellcheck-v0.11.0/shellcheck
 mv "$RUNNER_TEMP/shellcheck-v0.11.0/shellcheck" "$RUNNER_TEMP/bin/shellcheck"
 
 curl -sfL "https://github.com/bats-core/bats-core/archive/refs/tags/v1.14.0.tar.gz" -o /tmp/bats.tar.gz
