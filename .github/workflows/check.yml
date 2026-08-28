@@ -17,3 +17,6 @@ jobs:
 
       - name: shellcheck
         run: shellcheck install.sh
+
+      - name: bats
+        run: bats test/

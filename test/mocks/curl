@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+args="$*"
+
+outfile=""
+prev=""
+for arg in "$@"; do
+  [[ "$prev" == "-o" ]] && outfile="$arg"
+  prev="$arg"
+done
+
+serve() {
+  if [[ -n "$outfile" ]]; then
+    cp "$FIXTURES_DIR/$1" "$outfile"
+  else
+    cat "$FIXTURES_DIR/$1"
+  fi
+}
+
+case "$args" in
+  *actionlint*) serve actionlint.tar.gz ;;
+  *shellcheck*) serve shellcheck.tar.gz ;;
+  *bats-core*) serve bats-core.tar.gz ;;
+  *)
+    echo "unexpected curl call: $args" >&2
+    exit 1
+    ;;
+esac
