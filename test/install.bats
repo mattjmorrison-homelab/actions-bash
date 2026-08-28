@@ -30,6 +30,13 @@ setup() {
   [ "$("$RUNNER_TEMP/bin/bats")" = "fake-bats" ]
 }
 
+@test "installs an executable yq" {
+  run bash "$BATS_TEST_DIRNAME/../install.sh"
+  [ "$status" -eq 0 ]
+  [ -x "$RUNNER_TEMP/bin/yq" ]
+  [ "$("$RUNNER_TEMP/bin/yq")" = "fake-yq" ]
+}
+
 @test "adds RUNNER_TEMP/bin to GITHUB_PATH" {
   run bash "$BATS_TEST_DIRNAME/../install.sh"
   [ "$status" -eq 0 ]

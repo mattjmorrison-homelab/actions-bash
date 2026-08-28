@@ -20,6 +20,7 @@ case "$args" in
   *actionlint*) serve actionlint.tar.gz ;;
   *shellcheck*) serve shellcheck.tar.gz ;;
   *bats-core*) serve bats-core.tar.gz ;;
+  *yq*) serve yq ;;
   *)
     echo "unexpected curl call: $args" >&2
     exit 1
