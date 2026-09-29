@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: actions-bash
+  annotations:
+    github.com/project-slug: mattjmorrison-homelab/actions-bash
+spec:
+  type: library
+  owner: mattjmorrison-homelab
+  lifecycle: experimental
+  system: ci
